@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="BUFT Student Dashboard – Access all important BGMEA University of Fashion Technology portals from one place." />
+  <meta name="keywords" content="BUFT, BGMEA University, Fashion Technology, Student Dashboard, Portal" />
+  <meta name="author" content="BUFT" />
+  <meta property="og:title" content="BUFT Student Dashboard" />
+  <meta property="og:description" content="Your central hub for all BUFT student portals." />
+  <meta property="og:type" content="website" />
+  <title>BUFT Student Dashboard</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="LOGO.webp" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader" role="status" aria-label="Loading dashboard">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <img src="LOGO.webp" alt="BUFT" />
+      </div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <p>Loading your dashboard&hellip;</p>
+    </div>
+  </div>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTop" aria-label="Scroll to top" title="Back to top">
+    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- Dark Mode Toggle -->
+  <button id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+    <i class="fa-solid fa-moon" aria-hidden="true"></i>
+  </button>
+
+  <div id="app" class="fade-in">
+
+    <!-- Header -->
+    <header class="header" role="banner">
+      <div class="header-inner container">
+        <div class="header-brand">
+          <div class="brand-logo">
+            <img src="LOGO.webp" alt="BUFT Logo" />
+          </div>
+          <div class="brand-text">
+            <h1 class="brand-title">BGMEA University of Fashion Technology</h1>
+            <p class="brand-subtitle">Student Dashboard</p>
+          </div>
+        </div>
+        <div class="header-clock" aria-live="polite" aria-atomic="true">
+          <div class="clock-day" id="clockDay"></div>
+          <div class="clock-date" id="clockDate"></div>
+          <div class="clock-time" id="clockTime"></div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="main container">
+
+      <!-- Welcome Section -->
+      <section class="welcome-section" aria-label="Welcome">
+        <div class="welcome-text">
+          <h2 class="welcome-heading">Welcome <span class="wave" aria-hidden="true">&#128075;</span></h2>
+          <p class="welcome-sub">Access all your important BUFT portals from one place.</p>
+        </div>
+        <div class="welcome-badge">
+          <i class="fa-solid fa-circle-dot" aria-hidden="true"></i>
+          <span>8 portals available</span>
+        </div>
+      </section>
+
+      <!-- Quick Stats -->
+      <section class="stats-section" aria-label="Quick statistics">
+        <div class="stat-card" tabindex="0">
+          <div class="stat-icon" aria-hidden="true"><i class="fa-solid fa-table-cells-large"></i></div>
+          <div class="stat-info">
+            <span class="stat-value" id="totalPortals">8</span>
+            <span class="stat-label">Total Portals</span>
+          </div>
+        </div>
+        <div class="stat-card" tabindex="0">
+          <div class="stat-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></div>
+          <div class="stat-info">
+            <span class="stat-value">1-Click</span>
+            <span class="stat-label">Quick Access</span>
+          </div>
+        </div>
+        <div class="stat-card" tabindex="0">
+          <div class="stat-icon" aria-hidden="true"><i class="fa-solid fa-clock-rotate-left"></i></div>
+          <div class="stat-info">
+            <span class="stat-value" id="lastUpdated">July 2026</span>
+            <span class="stat-label">Last Updated</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Search Bar -->
+      <section class="search-section" aria-label="Search portals">
+        <div class="search-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon" aria-hidden="true"></i>
+          <input
+            type="search"
+            id="searchInput"
+            class="search-input"
+            placeholder="Search Portal..."
+            aria-label="Search portals"
+            autocomplete="off"
+          />
+          <button class="search-clear" id="searchClear" aria-label="Clear search" hidden>
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <p class="search-hint" id="searchHint" aria-live="polite"></p>
+      </section>
+
+      <!-- Dashboard Cards -->
+      <section class="cards-section" aria-label="Portal cards">
+        <div class="cards-grid" id="cardsGrid" role="list">
+
+          <a href="https://ucam.buft.edu.bd/" class="card" role="listitem" tabindex="0"
+             data-title="EMS Portal" data-desc="Exam management and results"
+             aria-label="EMS Portal – Exam management and results"
+             target="_blank" rel="noopener noreferrer">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">EMS Portal</h3>
+              <p class="card-desc">Exam management &amp; results</p>
+            </div>
+            <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+            <span class="ripple-container" aria-hidden="true"></span>
+          </a>
+
+          <a href="https://naabilll.github.io/buft-bus-tracker/" class="card" role="listitem" tabindex="0"
+             data-title="Bus Map" data-desc="BUFT Bus Tracker V3.0"
+             aria-label="Bus Map – BUFT Bus Tracker V3.0"
+             target="_blank" rel="noopener noreferrer">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i class="fa-solid fa-bus"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Bus Map</h3>
+              <p class="card-desc">BUFT Bus Tracker V3.0</p>
+            </div>
+            <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+            <span class="ripple-container" aria-hidden="true"></span>
+          </a>
+
+          <a href="https://mail.google.com/a/buft.edu.bd" class="card" role="listitem" tabindex="0"
+             data-title="Email Portal" data-desc="Access your university email"
+             aria-label="Email Portal – Access your university email"
+             target="_blank" rel="noopener noreferrer">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Email Portal</h3>
+              <p class="card-desc">Access your university email</p>
+            </div>
+            <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+            <span class="ripple-container" aria-hidden="true"></span>
+          </a>
+
+          <a href="https://buftex.netlify.app" class="card" role="listitem" tabindex="0"
+             data-title="Lab Report" data-desc="Lab report & assignment cover page"
+             aria-label="Lab Report – Lab report and assignment cover page generator"
+             target="_blank" rel="noopener noreferrer">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i class="fa-solid fa-flask"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Lab Report</h3>
+              <p class="card-desc">Assignment &amp; cover page maker</p>
+            </div>
+            <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+            <span class="ripple-container" aria-hidden="true"></span>
+          </a>
+
+          <a href="https://aims.buft.ac.bd/login" class="card" role="listitem" tabindex="0"
+             data-title="Assignment" data-desc="Submit and track assignments"
+             aria-label="Assignment – Submit and track assignments"
+             target="_blank" rel="noopener noreferrer">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i class="fa-solid fa-file-pen"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Assignment</h3>
+              <p class="card-desc">Submit &amp; track assignments</p>
+            </div>
+            <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+            <span class="ripple-container" aria-hidden="true"></span>
+          </a>
+
+          <a href="https://buft.edu.bd/" class="card" role="listitem" tabindex="0"
+             data-title="BUFT Website" data-desc="Official university website"
+             aria-label="BUFT Website – Official university website"
+             target="_blank" rel="noopener noreferrer">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">BUFT Website</h3>
+              <p class="card-desc">Official university website</p>
+            </div>
+            <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+            <span class="ripple-container" aria-hidden="true"></span>
+          </a>
+
+          <a href="https://buft.edu.bd/academic-calendar" class="card" role="listitem" tabindex="0"
+             data-title="Academic Calendar" data-desc="Semester dates and schedule"
+             aria-label="Academic Calendar – Semester dates and schedule"
+             target="_blank" rel="noopener noreferrer">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i class="fa-solid fa-calendar-days"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Academic Calendar</h3>
+              <p class="card-desc">Semester dates &amp; schedule</p>
+            </div>
+            <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+            <span class="ripple-container" aria-hidden="true"></span>
+          </a>
+
+          <a href="https://aims.buft.ac.bd/login" class="card" role="listitem" tabindex="0"
+             data-title="Course Materials" data-desc="Lecture notes and resources"
+             aria-label="Course Materials – Lecture notes and resources"
+             target="_blank" rel="noopener noreferrer">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i class="fa-solid fa-book-bookmark"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Course Materials</h3>
+              <p class="card-desc">Lecture notes &amp; resources</p>
+            </div>
+            <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+            <span class="ripple-container" aria-hidden="true"></span>
+          </a>
+
+          <a href="https://buft.edu.bd/notice" class="card" role="listitem" tabindex="0"
+             data-title="Notice Board" data-desc="University announcements"
+             aria-label="Notice Board – University announcements"
+             target="_blank" rel="noopener noreferrer">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Notice Board</h3>
+              <p class="card-desc">University announcements</p>
+            </div>
+            <div class="card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+            <span class="ripple-container" aria-hidden="true"></span>
+          </a>
+
+        </div>
+
+        <!-- No results -->
+        <div class="no-results" id="noResults" hidden aria-live="polite">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <p>No portals found for <strong id="noResultsQuery"></strong></p>
+          <span>Try a different keyword</span>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-inner container">
+        <div class="footer-brand">
+          <div class="footer-logo">
+        <img src="LOGO.webp" alt="BUFT" />
+      </div>
+          <div>
+            <p class="footer-copy">&copy; 2026 BUFT Student Dashboard</p>
+            <p class="footer-tagline">Built to simplify student life.</p>
+          </div>
+        </div>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="#" class="footer-link">Privacy</a>
+          <span aria-hidden="true">&middot;</span>
+          <a href="#" class="footer-link">Help</a>
+          <span aria-hidden="true">&middot;</span>
+          <a href="#" class="footer-link">Contact</a>
+        </nav>
+      </div>
+    </footer>
+
+  </div><!-- /#app -->
+
+  <script src="app.js"></script>
+</body>
+</html>
